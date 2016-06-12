@@ -1,0 +1,8 @@
+<div *ngIf="product">
+    <h2>{{product.name}}</h2>
+    <p>{{product.description}}</p>
+    {{ product.price | currency}}
+    <input type="number" [(ngModel)]="product.price">
+    <button (click)="addToFavorites(product)">
+        Add to favorites</button>
+</div>

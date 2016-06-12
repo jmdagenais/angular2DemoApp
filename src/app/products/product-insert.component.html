@@ -1,0 +1,38 @@
+<h2>New Product</h2>
+
+<form (ngSubmit)="onSubmit()"
+        [ngFormModel]="insertForm">
+    <label for="name">Name:</label>
+    <input
+     id="name"
+     type="text"
+     ngControl="name">
+     <div *ngIf="name.touched && name.errors">
+            <span *ngIf="name.errors.required" class="errorMessage">Name is required</span>
+      </div>
+
+     <br>
+     
+    <label for="price">Price:</label>
+    <input
+     id="price"
+     type="number"
+     ngControl="price">
+    <div *ngIf="price.touched && name.errors">
+    <span *ngIf="price.errors.required" class="errorMessage">Price is required</span>
+      </div>
+     <br>
+     
+     <label for="description">Description:</label>
+     <textarea
+     id="description"
+     ngControl="description"></textarea>
+     <div *ngIf="description.touched && description.errors" class="errorMessage">
+        <span *ngIf="description.errors.required">Description is required</span>
+        <span *ngIf="description.errors.minlength">Min 3 chars</span>
+        <span *ngIf="description.errors.maxlength">Max 50 chars</span>
+    </div>
+     <br>
+     
+     <button type="submit" [disabled]="!insertForm.valid">Submit</button>
+</form>

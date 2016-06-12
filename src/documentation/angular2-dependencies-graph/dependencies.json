@@ -1,0 +1,53 @@
+[
+  {
+    "selector": "demo-app-app",
+    "name": "DemoAppAppComponent",
+    "label": "",
+    "file": "app/demo-app.component.ts",
+    "directives": [],
+    "providers": [],
+    "templateUrl": [
+      "demo-app.component.html"
+    ],
+    "styleUrls": [
+      "demo-app.component.css"
+    ]
+  },
+  {
+    "selector": "product-details",
+    "name": "ProductDetailsComponent",
+    "label": "",
+    "file": "app/products/product-details.component.ts",
+    "directives": [],
+    "providers": [],
+    "templateUrl": [
+      "product-details.component.html"
+    ],
+    "styleUrls": []
+  },
+  {
+    "selector": "products-list",
+    "name": "ProductsListComponent",
+    "label": "",
+    "file": "app/products/products-list.component.ts",
+    "directives": [
+      {
+        "name": "ProductDetailsComponent",
+        "label": "",
+        "selector": "product-details"
+      }
+    ],
+    "providers": [
+      {
+        "name": "FavoritesService",
+        "label": ""
+      }
+    ],
+    "templateUrl": [
+      "products-list.component.html"
+    ],
+    "styleUrls": [
+      "products-list.component.css"
+    ]
+  }
+]

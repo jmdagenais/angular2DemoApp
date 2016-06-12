@@ -1,0 +1,29 @@
+<h1>{{ title }}</h1>
+
+<h2>{{ message }}</h2>
+
+<p>{{favoritesNb}} product(s) in favorites.</p>
+
+<p>
+    <button (click)="sortList('price')">Sort by price</button>
+</p>
+
+<p>
+    <a [routerLink]="['insert']">Insert New...</a>
+</p>
+
+<ul class="products">
+    <li *ngFor="let product of products | orderBy:[sorter]"
+    (click)="onSelect(product, true)"
+    [class.selected]="product === selectedProduct"
+    [class.discontinued]="product.discontinued">
+        <span class="name">{{ product.name | uppercase }}</span> 
+        {{ product.description }}
+        <span class="price">{{ product.price | currency }}</span>
+    </li>
+</ul>
+
+<product-details
+    [product]="selectedProduct"
+    (addedToFavorites)="newFavorite($event)">
+ </product-details>
